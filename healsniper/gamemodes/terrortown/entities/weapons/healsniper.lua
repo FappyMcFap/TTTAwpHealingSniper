@@ -172,35 +172,6 @@ if CLIENT then
 	end
 end
 
-/*hook.Add("PlayerShouldTakeDamage", "healOnHit", function(ply, att)	
-  if !att or !att:IsPlayer() or !att:GetActiveWeapon() then return end
-  if att:GetActiveWeapon() and att:GetActiveWeapon():IsValid() and att:GetActiveWeapon():GetClass() == "healsniper" then
-      att:SetHealth(att:Health() + math.random(1,5) )
-
-      if ply:LastHitGroup() == HITGROUP_HEAD then
-          att:SetHealth(att:Health() + math.random(10,15))
-      end
-
-      if att:Health() > 150 then
-          att:SetHealth(150)
-      end
-  end
-print (!att, !att:IsPlayer(), !att:GetActiveWeapon()) --expect to see "false false false" here
-print (att:GetActiveWeapon(),att:GetActiveWeapon():IsValid(), att:GetActiveWeapon():GetClass() == "healsniper") --expect to see <an entity> true, false (when not using the sniper) here
-  return true
-end)
-
-hook.Add("DoPlayerDeath", "healOnDeath", function(ply, att)
-  if !att or !att:IsPlayer() or !att:GetActiveWeapon() then return end
-  if att:GetActiveWeapon() and att:GetActiveWeapon():IsValid() and att:GetActiveWeapon():GetClass() == "healsniper" then
-      att:SetHealth(att:Health() + math.random(1,10 ))
-
-      if att:Health() > 150 then
-          att:SetHealth(150)
-      end
-  end
-end)
-*/
 hook.Add("PlayerShouldTakeDamage", "healOnHit", function(ply, att)
 	if att and att:IsPlayer() then
 		if att:GetActiveWeapon() and att:GetActiveWeapon():IsValid() and att:GetActiveWeapon():GetClass() == "healsniper" then
